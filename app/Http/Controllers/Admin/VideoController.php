@@ -28,6 +28,7 @@ class VideoController extends Controller
             $request->validate(
                 [
                     'title' => 'required',
+                    'type' => 'required',
                     'link' => 'required'
                 ]
             )
@@ -49,10 +50,12 @@ class VideoController extends Controller
         $request->validate(
             [
                 'title' => 'required',
+                'type' => 'required',
             ]
         );
         $video->update([
             'title' => $request->title,
+            'type' => $request->type,
             'link' => $request->link
 
         ]);

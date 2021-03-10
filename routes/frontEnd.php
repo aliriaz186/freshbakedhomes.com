@@ -10,6 +10,7 @@ Route::view('/video', 'website.pages.video')->name('video');
 Route::view('/grow-home', 'website.pages.grow-home')->name('grow-home');
 Route::view('/home-for-americans', 'website.pages.american')->name('american');
 Route::view('/how-to-buy', 'website.pages.buy')->name('buy');
+Route::view('/blogs', 'website.pages.blogs')->name('blogs');
 Route::get('/contact-us', function () {
     return view('website.pages.contact');
 })->name('contact');

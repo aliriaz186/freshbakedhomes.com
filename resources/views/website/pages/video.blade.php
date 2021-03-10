@@ -32,7 +32,7 @@
         <div class="col-lg-8 shadow-sm">
 
             @php
-            $videos = App\Models\Video::all();
+            $videos = App\Models\Video::where('type', 'The First Container Home video diary')->get();
             @endphp
             @foreach ($videos as $video)
 

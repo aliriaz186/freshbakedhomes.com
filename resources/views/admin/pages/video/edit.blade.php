@@ -59,6 +59,18 @@
                             @enderror
                         </div>
 
+                        <div class="form-group">
+                            <label for="name">Select Video Placement</label>
+                            <select type="text" name="type" id="type" class="form-control">
+                                <option value="">Select Video Placement</option>
+                                @foreach(\App\Models\VideoPlacement::all() as $placement)
+                                    <option value="{{$placement->type}}" {{$video->type == $placement->type ? 'selected' : ''}}>{{$placement->type}}</option>
+                                @endforeach
+                            </select>
+                            @error('placement')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
 
 
 

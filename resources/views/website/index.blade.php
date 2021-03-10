@@ -120,22 +120,22 @@
   <div class="container">
 
     <div class="section-title">
-      <h2>Portfolio</h2>
-      <p>Recent Works</p>
+{{--      <h2>Portfolio</h2>--}}
+      <p>Initial Container Home Concept</p>
     </div>
 
     <div class="row">
 
       @php
-      $images = App\Models\Photo::all();
-      @endphp
+      $images = App\Models\Photo::where('type', 'INITIAL CONTAINER HOME CONCEPT')->get();
+     @endphp
       @foreach ($images as $image)
 
       <div class="col-lg-4 col-md-6 mb-2">
 
         <div class="portfolio-wrap" style="height:200px">
-          <a href="{{ asset($image->image) }}" data-lightbox="id" data-title="{{ $image->title }}"
-            title="{{ $image->title }}"> <img src="{{ asset($image->image) }}" alt="IMG"
+          <a href="{{ url('') }}/{{$image->image}}" data-lightbox="id" data-title="{{ $image->title }}"
+            title="{{ $image->title }}"> <img src="{{ url('') }}/{{$image->image}}" alt="IMG"
               class="img-fluid img-thumbnail shadow-sm"></a>
 
         </div>

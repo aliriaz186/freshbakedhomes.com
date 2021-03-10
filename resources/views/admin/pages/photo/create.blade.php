@@ -56,6 +56,19 @@
                             <img id="output_image" class="img-fluid" width="400px" />
                         </div>
 
+                        <div class="form-group">
+                            <label for="name">Select Image Placement</label>
+                            <select type="text" name="placement" id="placement" class="form-control">
+                                <option value="">Select Image Placement</option>
+                                @foreach(\App\Models\ImagePlacements::all() as $placement)
+                                    <option value="{{$placement->type}}">{{$placement->type}}</option>
+                                @endforeach
+                            </select>
+                            @error('placement')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+
 
                     </div>
                     <!-- /.card-body -->

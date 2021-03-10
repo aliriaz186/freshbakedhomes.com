@@ -54,8 +54,11 @@
                         <th style="width: 7%">
                             #
                         </th>
-                        <th style="width: 35%">
+                        <th style="width: 20%">
                             Title
+                        </th>
+                        <th style="width: 15%">
+                            Placement
                         </th>
                         <th style="width: 25%">
                             Video
@@ -82,6 +85,9 @@
 
                         <td>
                             {{ $video->title }}
+                        </td>
+                        <td>
+                            {{ $video->type }}
                         </td>
                         <td>
                             <iframe src="{{$video->link}}" frameborder="0"></iframe>

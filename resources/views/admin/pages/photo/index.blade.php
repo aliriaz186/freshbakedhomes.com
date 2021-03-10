@@ -54,8 +54,11 @@
                         <th style="width: 7%">
                             #
                         </th>
-                        <th style="width: 35%">
+                        <th style="width: 20%">
                             Title
+                        </th>
+                        <th style="width: 15%">
+                            Placement
                         </th>
                         <th style="width: 25%">
                             Image
@@ -84,7 +87,10 @@
                             {{ $image->title }}
                         </td>
                         <td>
-                            <img src="{{asset($image->image)}}" alt="img" width="100%" height="190" class="">
+                            {{ $image->type }}
+                        </td>
+                        <td>
+                            <img src="{{url('')}}/{{$image->image}}" alt="img" width="100%" height="190" class="">
                         </td>
 
                         <td class="project_progress">

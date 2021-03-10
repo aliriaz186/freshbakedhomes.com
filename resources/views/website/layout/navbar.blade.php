@@ -29,6 +29,8 @@
                                 <li class="{{ Request::is('how-to-buy') ? 'active' : '' }}"> <a
                                                 href="{{ route('buy') }}">How
                                                 To Buy</a></li>
+                            <li class="{{ Request::is('blogs') ? 'active' : '' }}"> <a
+                                                href="{{ route('blogs') }}">Blogs</a></li>
                                 <li class="{{ Request::is('contact-us') ? 'active' : '' }}"> <a
                                                 href="{{ route('contact') }}">Contact
                                                 Us</a></li>

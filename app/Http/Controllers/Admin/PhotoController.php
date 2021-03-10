@@ -41,7 +41,8 @@ class PhotoController extends Controller
         $request->validate(
             [
                 'title' => 'required',
-                'image' => 'required'
+                'image' => 'required',
+                'placement' => 'required'
             ]
         );
 
@@ -50,6 +51,7 @@ class PhotoController extends Controller
             Photo::create(
                 [
                     'title' => $request->title,
+                    'type' =>  $request->placement,
                     'image' => $imagePath
                 ]
             );
@@ -78,6 +80,7 @@ class PhotoController extends Controller
         $request->validate(
             [
                 'title' => 'required',
+                'placement' => 'required'
             ]
         );
 
@@ -86,11 +89,13 @@ class PhotoController extends Controller
             $imagePath = $this->imageUpload($request);
             $image->update([
                 'title' => $request->title,
+                'type' => $request->placement,
                 'image' => $imagePath
             ]);
         } else {
             $image->update([
                 'title' => $request->title,
+                'type' => $request->placement,
             ]);
         }
         return redirect(route('image.index'))->with('success', 'Successpully Updated');
